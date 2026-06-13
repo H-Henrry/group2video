@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>登入系統</title>
+    <style>
+        body { display: flex; justify-content: center; align-items: center; height: 100vh; background: #1a1a1a; color: #fff; font-family: sans-serif; }
+        #login-box { text-align: center; }
+        input { padding: 10px; border-radius: 5px; }
+        button { padding: 10px 20px; cursor: pointer; }
+        #content-area { display: none; width: 80%; }
+    </style>
+</head>
+<body>
+
+<div id="login-box">
+    <h3>輸入密碼以觀看</h3>
+    <input type="password" id="password" placeholder="輸入密碼">
+    <button onclick="check()">登入</button>
+</div>
+
+<div id="content-area">
+    <div style="position: relative; width: 100%; height: 0; padding-top: 56.25%; overflow: hidden; border-radius: 8px;">
+        <iframe style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none;" src="https://www.canva.com/design/DAHMcGA11r8/GvMyI47QI11H4w0tzUvM_Q/watch?embed" allowfullscreen></iframe>
+    </div>
+</div>
+
+<script>
+    function check() {
+        // 這是 nmjh710group02 的簡單驗證
+        const password = document.getElementById('password').value;
+        if (password === "nmjh710group02") {
+            document.getElementById('login-box').style.display = 'none';
+            document.getElementById('content-area').style.display = 'block';
+        } else {
+            alert('密碼錯誤，請再試一次');
+        }
+    }
+</script>
+</body>
+</html>
